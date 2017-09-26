@@ -25,6 +25,11 @@ The biggest limitation is that you can't deploy DLLs with custom scripts at this
 - Copy your build folder (usually ".\NavisPythonShell\RevitPythonShell\bin\$(Configuration)\ )to
 "%APPDATA%\Autodesk Navisworks Manage 2016\Plugins" (or whichever version of Navisworks you're targeting)
 
+OR
+
+- Download a valid [release zip](https://github.com/dimven/NavisPythonShell/releases) for your version of Navisworks.
+- Extract the zip to "%APPDATA%\Autodesk Navisworks Manage 2016\Plugins" (or whichever version of Navisworks you're targeting)
+
 ## Contribute
 
 - Don't hesitate to file any issues you stumble uppon. (Tho I don't guarantee I'll be able to solve them all for you)
