@@ -18,9 +18,9 @@ namespace NavisPythonShell
     /// </summary>
 
     [PluginAttribute("NavisPythonShell.IronPythonConsoleCommand",                   
-                    "ACOM",
-                    ToolTip = "NPS command execution window",
-                    DisplayName = "Run NPS")]
+                     "ACOM",
+                     ToolTip = "NavisPythonShell IronPython Console",
+                     DisplayName = "Run NPS")]
     [AddInPluginAttribute(AddInLocation.AddIn,
         				  Icon = "Icons\\Python-16.ico",
         				  LargeIcon = "Icons\\Python-32.ico", 

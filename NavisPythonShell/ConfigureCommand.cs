@@ -13,9 +13,9 @@ namespace NavisPythonShell
     /// </summary>
 
     [PluginAttribute("NavisPythonShell.ConfigureCommand",                   
-                    "ACOM",
-                    ToolTip = "NPS configuration window",
-                    DisplayName = "Configure NPS")]
+                     "ACOM",
+                     ToolTip = "NPS configuration window",
+                     DisplayName = "Configure NPS")]
     [AddInPluginAttribute(AddInLocation.AddIn,
         				  Icon = "Icons\\Settings-16.ico",
         				  LargeIcon = "Icons\\Settings-32.ico", 
@@ -33,7 +33,7 @@ namespace NavisPythonShell
         	var dialog = new ConfigureCommandsForm();
             dialog.ShowDialog();
 
-            MessageBox.Show("Restart Navisworks to see changes to the commands in the Ribbon", "Configure NavisPythonShell", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("Restart Navisworks to see changes to the commands in the Ribbon", "Configure NavisPythonShell", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             return 0;
         }

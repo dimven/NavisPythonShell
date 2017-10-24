@@ -47,6 +47,7 @@ namespace NavisPythonShell
                 completions.Show();
                 documentation.Show();
             }
+
             public void resize()
             {
                 Width = _completions.PreferredSize.Width;

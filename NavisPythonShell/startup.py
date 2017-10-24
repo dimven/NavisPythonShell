@@ -1,4 +1,4 @@
-﻿# script that is run when Revit starts in the IExternalApplication.Startup event.
+﻿# script that is run when Navisworks starts in the IExternalApplication.Startup event.
 try:
     # add your code here
     # ...
