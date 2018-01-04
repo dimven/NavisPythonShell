@@ -11,7 +11,7 @@
     <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:"/>
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPNOREPAIR" Value="1"/>
-    <ROW Property="ARPPRODUCTICON" Value="Franksouza183FsPlacesfolderpython.exe" Type="8"/>
+    <ROW Property="ARPPRODUCTICON" Value="icon.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="eirannejad (original work by https://github.com/dimven)"/>
     <ROW Property="ProductCode" Value="1033:{A9A64AAA-853C-4227-AFF3-3BFBD9CB847B} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
@@ -157,7 +157,7 @@
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="Franksouza183FsPlacesfolderpython.exe" SourcePath="..\..\..\..\Downloads\Franksouza183-Fs-Places-folder-python.ico" Index="0"/>
+    <ROW Name="icon.exe" SourcePath="icon.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
