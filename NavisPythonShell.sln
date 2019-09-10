@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavisPythonShell", "NavisPythonShell\NavisPythonShell.csproj", "{7E37F14E-D840-42F8-8CA6-90FFC5497972}"
 	ProjectSection(ProjectDependencies) = postProject
