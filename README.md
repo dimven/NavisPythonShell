@@ -27,6 +27,7 @@ The biggest limitation is that you can't deploy DLLs with custom scripts at this
     - In the "Plugins" folder create a "NavisPythonShell" folder
     - Copy the contents of the build folder (usually ".\NavisPythonShell\NavisPythonShell\bin\$(Configuration)\" ) to the "\Plugins\NavisPythonShell\" folder
     - The final plugin directory should be similar to "%APPDATA%\Autodesk Navisworks Manage 2020\Plugins\NavisPythonShell"
+
 OR
 
 - Download a valid [release zip](https://github.com/dimven/NavisPythonShell/releases) for your version of Navisworks.
