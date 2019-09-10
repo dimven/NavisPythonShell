@@ -1,6 +1,6 @@
-from npw import doc, selection
+selection = doc.CurrentSelection.SelectedItems
 
-if selection.Count > 0:
+if any(selection):
     mi = selection[0]
     for pc in mi.PropertyCategories:
         print('\n')

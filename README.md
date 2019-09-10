@@ -1,5 +1,7 @@
 # NavisPythonShell
 
+![example](/Images/example.gif)
+
 This is obviously a fork of [RevitPythonShell](https://github.com/architecture-building-systems/revitpythonshell), bringing an IronPython interpreter to Autodesk Navisworks, and it would not be possible without the great work of everyone involved with the RPS project. It's still pretty rough around the edges and provides only basic functionality at this time. I'm sharing my work so far, in the hopes that together we can expand it further.
 
 The NavisPythonShell (NPS) ~lets you to write plugins for Navisworks in Python,~ provides you with an interactive shell that lets you see the results of your code *as you type it*. This is great for exploring the Navis API.
