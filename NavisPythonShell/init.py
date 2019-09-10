@@ -3,7 +3,7 @@
 from Autodesk.Navisworks.Api import *
 
 doc = Application.ActiveDocument
-
+selection = doc.CurrentSelection.SelectedItems
 
 def quit():
     __window__.Close()
