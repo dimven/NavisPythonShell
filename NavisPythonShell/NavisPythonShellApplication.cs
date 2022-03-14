@@ -37,7 +37,7 @@ namespace NavisPythonShell
                 //var dllfullpath = Path.Combine(dllfolder, assemblyName + ".dll");
                 //CreateCommandLoaderAssembly(settings, dllfolder, assemblyName);
 
-				//seems like I need to pre-load my dependencies			
+				//seems like I need to pre-load my dependencies
 				AppDomain.CurrentDomain.Load(typeof(NpsConfig).Assembly.GetName() );
                 
                 ExecuteStartupScript();

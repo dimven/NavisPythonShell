@@ -87,7 +87,8 @@
     <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autodesk.Navisworks.Api">
+    <Reference Include="Autodesk.Navisworks.Api, Version=17.0.1336.83, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Autodesk\Navisworks Manage 2020\Autodesk.Navisworks.Api.dll</HintPath>
       <Private>False</Private>
     </Reference>
@@ -271,6 +272,14 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>if not exist "C:\Program Files\Autodesk\Navisworks Manage 2020\Plugins\NavisPythonShell\" mkdir "C:\Program Files\Autodesk\Navisworks Manage 2020\Plugins\NavisPythonShell\"
+xcopy $(TargetDir)*.* "C:\Program Files\Autodesk\Navisworks Manage 2020\Plugins\NavisPythonShell\" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
