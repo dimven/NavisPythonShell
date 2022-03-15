@@ -141,9 +141,9 @@ namespace NavisPythonShell.NpsRuntime
             AddSearchPaths(engine);
             AddEmbeddedLib(engine);
 
-            // reference RevitAPI and RevitAPIUI
+            // reference Navisworks Api Document and Application
             engine.Runtime.LoadAssembly(typeof(Autodesk.Navisworks.Api.Document).Assembly);
-
+            engine.Runtime.LoadAssembly(typeof(Autodesk.Navisworks.Api.Application).Assembly);
             // also, allow access to the RPS internals
             engine.Runtime.LoadAssembly(typeof(NavisPythonShell.NpsRuntime.ScriptExecutor).Assembly);
         }        

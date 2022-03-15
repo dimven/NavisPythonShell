@@ -1,0 +1,16 @@
+Autodesk.Navisworks.Api.dll
+Autodesk.Navisworks.Api.xml
+ICSharpCode.AvalonEdit.dll
+IronPython.dll
+IronPython.Modules.dll
+IronPython.SQLite.dll
+IronPython.Wpf.dll
+Microsoft.Dynamic.dll
+Microsoft.Scripting.dll
+Microsoft.Scripting.Metadata.dll
+NpsRuntime.dll
+NpsRuntime.pdb
+PythonConsoleControl.dll
+PythonConsoleControl.pdb
+System.Windows.Controls.WpfPropertyGrid.dll
+WPG.dll

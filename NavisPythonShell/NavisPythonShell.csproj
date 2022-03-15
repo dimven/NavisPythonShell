@@ -277,8 +277,8 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "C:\Program Files\Autodesk\Navisworks Manage 2022\Plugins\NavisPythonShell\" mkdir "C:\Program Files\Autodesk\Navisworks Manage 2022\Plugins\NavisPythonShell\"
-xcopy $(TargetDir)*.* "C:\Program Files\Autodesk\Navisworks Manage 2022\Plugins\NavisPythonShell\" /Y /I /E</PostBuildEvent>
+    <PostBuildEvent>xcopy $(TargetDir)*.* "C:\Program Files\Autodesk\Navisworks Manage 2022\Plugins\NavisPythonShell\" /Y /I /E /EXCLUDE:$(SolutionDir)exclude.txt
+xcopy $(TargetDir)*.* "C:\Program Files\Autodesk\Navisworks Manage 2022\Dependencies\" /Y /I /E /EXCLUDE:$(SolutionDir)noexclude.txt</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

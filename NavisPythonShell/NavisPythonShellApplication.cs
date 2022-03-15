@@ -27,19 +27,18 @@ namespace NavisPythonShell
         {
             try
             {
-            	applicationLoaded = true;
-            	var dllfolder = GetSettingsFolder();
-            	settingsFolder = dllfolder;
-            	
-            	var settings = GetSettings();
-            	
+                applicationLoaded = true;
+                var dllfolder = GetSettingsFolder();
+                settingsFolder = dllfolder;
+
+                var settings = GetSettings();
+
                 //var assemblyName = "CommandLoaderAssembly";
                 //var dllfullpath = Path.Combine(dllfolder, assemblyName + ".dll");
                 //CreateCommandLoaderAssembly(settings, dllfolder, assemblyName);
+                //seems like I need to pre-load my dependencies
+                AppDomain.CurrentDomain.Load(typeof(NpsConfig).Assembly.GetName());
 
-				//seems like I need to pre-load my dependencies
-				AppDomain.CurrentDomain.Load(typeof(NpsConfig).Assembly.GetName() );
-                
                 ExecuteStartupScript();
                 return;
             }
@@ -56,8 +55,8 @@ namespace NavisPythonShell
             var startupScript = GetStartupScript();
             if (startupScript != null)
             {
-                var executor = new ScriptExecutor(GetConfig() );
-                var result = executor.ExecuteScript(startupScript, GetStartupScriptPath() );
+                var executor = new ScriptExecutor(GetConfig());
+                var result = executor.ExecuteScript(startupScript, GetStartupScriptPath());
                 if (result == -1)
                 {
                     Forms.MessageBox.Show(executor.Message, "NavisPythonShell - StartupScript");
@@ -117,10 +116,10 @@ namespace NavisPythonShell
             // FIXME: deallocate the python shell...
             return;
         }
-        
+
         public static IRpsConfig GetConfig()
-        {           
-            return new NpsConfig(GetSettingsFile() );
+        {
+            return new NpsConfig(GetSettingsFile());
         }
 
         /// <summary>
@@ -145,12 +144,12 @@ namespace NavisPythonShell
         /// </summary>
         private static string GetSettingsFolder()
         {
-        	if (!string.IsNullOrEmpty(settingsFolder) )
-        	    {
-        	    	return settingsFolder;
-        	    }
-        	//return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NavisPythonShell" + versionNumber);
-        	return Path.GetDirectoryName(typeof(NavisPythonShellApplication).Assembly.Location);
+            if (!string.IsNullOrEmpty(settingsFolder))
+            {
+                return settingsFolder;
+            }
+            //return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NavisPythonShell" + versionNumber);
+            return Path.GetDirectoryName(typeof(NavisPythonShellApplication).Assembly.Location);
         }
 
         /// <summary>
@@ -166,7 +165,7 @@ namespace NavisPythonShell
                 var commandName = commandNode.Attribute("name").Value;
                 var commandSrc = commandNode.Attribute("src").Value;
                 var group = commandNode.Attribute("group") == null ? "" : commandNode.Attribute("group").Value;
-                
+
                 ImageSource largeImage = null;
                 if (IsValidPath(commandNode.Attribute("largeImage")))
                 {
@@ -188,14 +187,15 @@ namespace NavisPythonShell
                 {
                     smallImage = GetEmbeddedPng(addinAssembly, "NavisPythonShell.Resources.PythonScript16x16.png");
                 }
-                
-                yield return new Command { 
-                        Name = commandName, 
-                        Source = commandSrc, 
-                        Group = group,
-                        LargeImage = largeImage,
-                        SmallImage = smallImage,
-                        Index = i++
+
+                yield return new Command
+                {
+                    Name = commandName,
+                    Source = commandSrc,
+                    Group = group,
+                    LargeImage = largeImage,
+                    SmallImage = smallImage,
+                    Index = i++
                 };
             }
         }
@@ -334,7 +334,7 @@ namespace NavisPythonShell
         /// </summary>
         public static void WriteSettings(
             IEnumerable<Command> commands,
-            IEnumerable<string> searchPaths, 
+            IEnumerable<string> searchPaths,
             IEnumerable<KeyValuePair<string, string>> variables,
             string initScript,
             string startupScript)
@@ -368,13 +368,13 @@ namespace NavisPythonShell
             foreach (var command in commands)
             {
                 xmlCommands.Add(new XElement(
-                    "Command", 
-                        new XAttribute("name", command.Name), 
+                    "Command",
+                        new XAttribute("name", command.Name),
                         new XAttribute("src", command.Source),
                         new XAttribute("group", command.Group)));
 
             }
-            doc.Root.Add(xmlCommands);            
+            doc.Root.Add(xmlCommands);
 
             // add search paths
             var xmlSearchPaths = new XElement("SearchPaths");
@@ -423,7 +423,7 @@ namespace NavisPythonShell
         public string Source;
         public int Index;
         public ImageSource LargeImage;
-        public ImageSource SmallImage;        
+        public ImageSource SmallImage;
 
         public override string ToString()
         {
