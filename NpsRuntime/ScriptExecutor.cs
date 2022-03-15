@@ -6,7 +6,7 @@ using Microsoft.Scripting;
 using Microsoft.Scripting.Hosting;
 using System.Collections.Generic;
 using Autodesk.Navisworks.Api;
-
+using Autodesk.Navisworks.Api.Clash;
 namespace NavisPythonShell.NpsRuntime
 {
     /// <summary>
@@ -143,7 +143,7 @@ namespace NavisPythonShell.NpsRuntime
 
             // reference Navisworks Api Document and Application
             engine.Runtime.LoadAssembly(typeof(Autodesk.Navisworks.Api.Document).Assembly);
-            engine.Runtime.LoadAssembly(typeof(Autodesk.Navisworks.Api.Application).Assembly);
+            engine.Runtime.LoadAssembly(typeof(Autodesk.Navisworks.Api.Clash.ClashTest).Assembly);
             // also, allow access to the RPS internals
             engine.Runtime.LoadAssembly(typeof(NavisPythonShell.NpsRuntime.ScriptExecutor).Assembly);
         }        
