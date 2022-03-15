@@ -1,8 +1,8 @@
 ﻿# these commands get executed in the current scope
 # of each new shell (but not for canned commands)
 from Autodesk.Navisworks.Api import *
-
-doc = Application.ActiveDocument
+app = Application
+doc = app.ActiveDocument
 selection = doc.CurrentSelection.SelectedItems
 
 def quit():
