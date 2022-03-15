@@ -1,4 +1,7 @@
 testdata = docclash.TestsData
 tests = testdata.Tests
 for test in tests:
-	print(test.DisplayName)
+	SavedItemCollection = test.Children
+	for saveitem in SavedItemCollection:
+		print(saveitem.DisplayName)
+		print(saveitem.Center)
