@@ -24,16 +24,28 @@ The biggest limitation is that you can't deploy DLLs with custom scripts at this
 
 - Reference the version of "Autodesk.Navisworks.Api.dll" that you'd like to target.
 - Compile the solution.
-- Go to the "%APPDATA%\Autodesk Navisworks Manage 2020\" (or the version that you'd like to target)
+- Go to the "C:\Program Files\Autodesk\Navisworks Manage {version}\Plugins" (with version a version current of navisworks)
     - If there is no "Plugins" foler, create it
-    - In the "Plugins" folder create a "NavisPythonShell" folder
-    - Copy the contents of the build folder (usually ".\NavisPythonShell\NavisPythonShell\bin\$(Configuration)\" ) to the "\Plugins\NavisPythonShell\" folder
-    - The final plugin directory should be similar to "%APPDATA%\Autodesk Navisworks Manage 2020\Plugins\NavisPythonShell"
+    - Change Permisstions of two folder `Plugins` and `Dependencies` in properties
+
+    ![](Images/devenv_9FXen0L47z.png)
+
+    ![](Images/devenv_E5MD6kiAQC.png)
+
+    - Build Solution(if you change `version` of navisworks, please change number version in post build event)
+    ```
+    xcopy $(TargetDir)*.* "C:\Program Files\Autodesk\Navisworks Manage {version}\Plugins\NavisPythonShell\" /Y /I /E /EXCLUDE:$(SolutionDir)exclude.txt
+
+    xcopy $(TargetDir)*.* "C:\Program Files\Autodesk\Navisworks Manage {version}\Dependencies\" /Y /I /E /EXCLUDE:$(SolutionDir)noexclude.txt
+    
+    ```
 
 OR
 
-- Download a valid [release zip](https://github.com/dimven/NavisPythonShell/releases) for your version of Navisworks.
-- Extract the zip to "%APPDATA%\Autodesk Navisworks Manage 2020\Plugins" (or whichever version of Navisworks you're targeting)
+- Download a valid [release zip](https://github.com/dimven/NavisPythonShell/releases) for your `version` of Navisworks.
+- Extract the zip to two folder: 
+  - "C:\Program Files\Autodesk\Autodesk Navisworks Manage {version}\Plugins" : include all file in noexclude.txt and folder icon
+  - "C:\Program Files\Autodesk\Autodesk Navisworks Manage {version}\Dependencies" : include all file in exclude.txt
 
 ## Contribute
 
