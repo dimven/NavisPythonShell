@@ -24,7 +24,7 @@ The biggest limitation is that you can't deploy DLLs with custom scripts at this
 
 - Reference the version of "Autodesk.Navisworks.Api.dll" that you'd like to target.
 - Compile the solution.
-- Go to the "C:\Program Files\Autodesk\Navisworks Manage {version}\Plugins" (with version a version current of navisworks)
+- Go to the "C:\Program Files\Autodesk\Navisworks Manage {version}\Plugins" (with version being the current version of your navisworks)
     - If there is no "Plugins" foler, create it
     - Change Permisstions of two folder `Plugins` and `Dependencies` in properties
 
