@@ -1,10 +1,11 @@
 ﻿# these commands get executed in the current scope
 # of each new shell (but not for canned commands)
 from Autodesk.Navisworks.Api import *
-
-doc = Application.ActiveDocument
+from Autodesk.Navisworks.Api.Clash import *
+app = Application
+doc = app.ActiveDocument
 selection = doc.CurrentSelection.SelectedItems
-
+docclash = DocumentExtensions.GetClash(doc)
 def quit():
     __window__.Close()
 exit = quit

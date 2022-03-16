@@ -5,6 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using Microsoft.Scripting;
 using System.Threading;
+using System.Windows.Interop;
 using System.Windows.Threading;
 using NavisPythonShell.NpsRuntime;
 using Forms = System.Windows.Forms;
@@ -97,6 +98,9 @@ namespace NavisPythonShell
                     }
                 });
             });
+            WindowInteropHelper helper = new WindowInteropHelper(gui);
+            IntPtr hander = Application.Gui.MainWindow.Handle;
+            helper.Owner = hander;
             gui.ShowDialog();
             return 0;
         }

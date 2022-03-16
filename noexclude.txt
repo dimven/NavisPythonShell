@@ -1,0 +1,5 @@
+init.py
+NavisPythonShell.dll
+NavisPythonShell.pdb
+NavisPythonShell.xml
+startup.py
